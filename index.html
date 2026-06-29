@@ -6,7 +6,7 @@
 <title>Alsten Capital Group — Open Enrollment 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════
    TOKENS
@@ -30,7 +30,7 @@
   --rule-light:    rgba(0,0,0,0.1);
 
   --display: 'Bebas Neue', 'Arial Black', sans-serif;
-  --ui:      'Inter', system-ui, sans-serif;
+  --ui:      'Lato', system-ui, sans-serif;
   --max-w:   1280px;
   --gutter:  80px;
   --radius:  12px;
@@ -226,28 +226,27 @@ body {
 
 .hero-date {
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
-  color: rgba(255,255,255,0.5);
+  color: var(--white);
   margin-bottom: 20px;
   letter-spacing: 0.01em;
 }
 
 .hero-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 76px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--white);
   line-height: 1.0;
   margin-bottom: 28px;
 }
 
 .hero-body {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
-  color: rgba(255,255,255,0.5);
+  color: var(--white);
   line-height: 1.7;
   max-width: 400px;
 }
@@ -290,12 +289,11 @@ body {
 .action-card:hover { background: #3B6EF0; transform: translateY(-3px); }
 
 .action-label {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 28px;
   text-transform: uppercase;
   color: var(--white);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   line-height: 1;
 }
 .action-row {
@@ -343,10 +341,9 @@ body {
   gap: 20px;
 }
 .need-help-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 56px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -399,10 +396,9 @@ body {
   letter-spacing: 0.01em;
 }
 .benefits-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 64px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -467,10 +463,9 @@ body {
   flex: 1;
 }
 .benefit-name {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 22px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.1;
@@ -524,10 +519,9 @@ body {
   gap: 40px;
 }
 .app-left-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 64px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -551,10 +545,9 @@ body {
   gap: 20px;
 }
 .app-right-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 48px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--navy);
   line-height: 1.05;
@@ -594,10 +587,9 @@ body {
   margin: 0 auto;
 }
 .contact-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 56px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -657,10 +649,9 @@ body {
   text-align: center;
 }
 .quick-links-title {
-  font-family: var(--ui);
-  font-weight: 900;
+  font-family: var(--display);
   font-size: 48px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -890,8 +881,8 @@ footer {
     <!-- Signature: clip-reveal upward -->
     <h1 class="hero-title" aria-label="Open Enrollment Is Here">
       <span class="hero-title-line"><span class="hero-title-inner">Open</span></span>
-      <span class="hero-title-line"><span class="hero-title-inner">Enrollment</span></span>
-      <span class="hero-title-line"><span class="hero-title-inner" style="color: var(--blue);">Is Here</span></span>
+      <span class="hero-title-line"><span class="hero-title-inner" style="color: var(--blue);">Enrollment</span></span>
+      <span class="hero-title-line"><span class="hero-title-inner" style="color: var(--orange);">Is Here!</span></span>
     </h1>
 
     <p class="hero-body" data-enter data-delay="700">Don't miss out on this once-a-year opportunity to make changes to your benefits.</p>
