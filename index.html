@@ -836,11 +836,22 @@ footer {
   .nav-links a > span,
   .nav-links a::after { justify-self: start; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 64px var(--gutter); }
+  /* Hero: single block with the photo as a darkened full-bleed background */
+  .hero { display: block; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left {
+    position: relative;
+    min-height: 92vh;
+    padding: 88px var(--gutter) 120px;
+    justify-content: flex-start;
+    background-image:
+      linear-gradient(180deg, rgba(3,3,8,0.92) 0%, rgba(3,3,8,0.8) 38%, rgba(3,3,8,0.62) 70%, rgba(3,3,8,0.45) 100%),
+      url('assets/Images/Header image-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+  }
   .hero-title { font-size: 64px; }
   .hero-body { font-size: 16px; }
-  .hero-right { height: 320px; }
   .action-section { margin-top: 0; }
   .action-grid { grid-template-columns: 1fr; }
   .need-help { padding: 64px var(--gutter); }
