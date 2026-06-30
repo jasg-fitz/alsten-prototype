@@ -21,7 +21,7 @@
   --blue:          #2563EB;
   --blue-card:     #3060E8;
   --blue-section:  #1A3CBD;
-  --blue-deep:     #0D1B5E;
+  --blue-deep:     #0E2766;
   --orange:        #F97316;
   --white:         #FFFFFF;
   --gray-text:     rgba(255,255,255,0.55);
@@ -323,39 +323,45 @@ body {
    NEED HELP DECIDING
 ══════════════════════════════════════════════════ */
 .need-help {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 524px;
-}
-
-.need-help-image {
   position: relative;
-  overflow: hidden;
+  padding: 112px var(--gutter);
   background: url('assets/Images/vitaly-gariev-8k5j5z6ZYT4-unsplash.jpg') center/cover no-repeat;
+  overflow: hidden;
 }
-
+.need-help-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(258.96deg, rgba(3,3,8,0.6) 41.3%, rgba(3,3,8,0) 58.6%);
+  pointer-events: none;
+}
+.need-help-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
 .need-help-content {
-  background: var(--navy);
-  padding: 80px 72px;
+  width: 600px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
 .need-help-title {
   font-family: var(--display);
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 800;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1.0;
+  line-height: 1.2;
 }
 .need-help-body {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  max-width: 400px;
+  color: var(--white);
+  line-height: 1.5;
 }
 .btn-blue {
   display: inline-flex;
@@ -504,53 +510,65 @@ body {
 ══════════════════════════════════════════════════ */
 .app-promo {
   background: var(--blue-deep);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 640px;
+  padding: 80px var(--gutter);
+}
+.app-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .app-left {
-  padding: 72px var(--gutter);
+  width: 645px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  align-items: center;
+  gap: 24px;
 }
 .app-left-title {
-  font-family: var(--display);
-  font-size: 64px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.0;
-  white-space: nowrap;
-}
-.app-mockup-img {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-.app-right {
-  padding: 72px 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
-.app-right-title {
   font-family: var(--display);
   font-size: 48px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
-  line-height: 1.05;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+.app-mockup-img {
+  width: 453px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.app-right {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.app-right-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.app-right-title {
+  font-family: var(--display);
+  font-size: 60px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.2;
 }
 .app-right-body {
-  font-size: 15px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.65;
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1.5;
 }
 
 
@@ -742,16 +760,16 @@ footer {
   .hero-right { height: 320px; }
   .action-section { margin-top: 0; }
   .action-grid { grid-template-columns: 1fr; }
-  .need-help { grid-template-columns: 1fr; }
-  .need-help-image { height: 280px; }
-  .need-help-content { padding: 56px var(--gutter); }
+  .need-help { padding: 64px var(--gutter); }
+  .need-help-overlay { background: rgba(3,3,8,0.65); }
+  .need-help-content { width: 100%; }
   .need-help-title { font-size: 40px; }
   .benefits-grid { grid-template-columns: 1fr; }
   .benefits-title { font-size: 44px; }
-  .app-promo { grid-template-columns: 1fr; }
-  .app-left { padding: 56px var(--gutter); min-height: 320px; }
-  .app-right { padding: 56px var(--gutter); }
-  .app-right-title { font-size: 36px; }
+  .app-inner { flex-direction: column; }
+  .app-left { width: 100%; }
+  .app-right { max-width: 100%; }
+  .app-right-title { font-size: 40px; }
   .contact-title { font-size: 40px; }
   .quick-links-title { font-size: 36px; }
   .contact-actions { flex-direction: column; }
@@ -851,11 +869,13 @@ footer {
 
 <!-- ══ NEED HELP DECIDING ══ -->
 <section class="need-help">
-  <div class="need-help-image" data-reveal-left></div>
-  <div class="need-help-content" data-reveal-right>
-    <h2 class="need-help-title">Need Help<br>Deciding?</h2>
-    <p class="need-help-body">Take a few minutes and review how people just like you think about and choose their Medical Plans. Then, compare their situations to your own!</p>
-    <a href="#" class="btn-blue">Compare Plans</a>
+  <div class="need-help-overlay"></div>
+  <div class="need-help-inner">
+    <div class="need-help-content" data-reveal-right>
+      <h2 class="need-help-title">Need Help Deciding?</h2>
+      <p class="need-help-body">Take a few minutes and review how people just like you think about and choose their Medical Plans. Then, compare their situations to your own!</p>
+      <a href="#" class="btn-blue">Compare Plans</a>
+    </div>
   </div>
 </section>
 
@@ -949,14 +969,18 @@ footer {
 
 <!-- ══ APP PROMO ══ -->
 <section class="app-promo">
-  <div class="app-left" data-reveal-left>
-    <h2 class="app-left-title">Tap That App!</h2>
-    <img class="app-mockup-img" src="assets/Images/App mockup.png" alt="Alsten Benefits mobile app" loading="lazy">
-  </div>
-  <div class="app-right" data-reveal-right>
-    <h2 class="app-right-title">Looking for your<br>benefits on the go?</h2>
-    <p class="app-right-body">Everything you need is in your pocket. Check your coverage, update your selections, and see what's coming up during open enrollment. Check out our app library.</p>
-    <a href="#" class="btn-blue">Get The App</a>
+  <div class="app-inner">
+    <div class="app-left" data-reveal-left>
+      <h2 class="app-left-title">Tap That App!</h2>
+      <img class="app-mockup-img" src="assets/Images/App mockup.png" alt="Alsten Benefits mobile app" loading="lazy">
+    </div>
+    <div class="app-right" data-reveal-right>
+      <div class="app-right-text">
+        <h2 class="app-right-title">Looking for your benefits on the go?</h2>
+        <p class="app-right-body">Everything you need is in your pocket. Check your coverage, update your selections, see what's coming, and check out our app library.</p>
+      </div>
+      <a href="#" class="btn-blue">Get The App</a>
+    </div>
   </div>
 </section>
 
