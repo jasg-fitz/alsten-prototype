@@ -148,7 +148,7 @@ body {
   align-items: center;
   gap: 4px;
   list-style: none;
-  flex: 1;
+  margin-left: auto;
 }
 .nav-links a {
   font-size: 13px;
@@ -158,10 +158,19 @@ body {
   letter-spacing: 0.01em;
   padding: 7px 14px;
   border-radius: 6px;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s, font-weight 0.15s;
   white-space: nowrap;
 }
-.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+/* Reserve space for the bold state so hover doesn't shift layout */
+.nav-links a::after {
+  content: attr(data-label);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+}
+.nav-links a:hover { color: var(--white); font-weight: 700; }
 .nav-links a.active { color: var(--white); font-weight: 700; }
 
 .nav-enroll {
@@ -814,11 +823,11 @@ footer {
       <img src="assets/Logos/Alsten Capital Group Logo - Light.svg" alt="Alsten Capital Group">
     </a>
     <ul class="nav-links">
-      <li data-enter data-delay="80"><a href="#" class="active">Enrollment</a></li>
-      <li data-enter data-delay="120"><a href="#">Health</a></li>
-      <li data-enter data-delay="160"><a href="#">Money</a></li>
-      <li data-enter data-delay="200"><a href="#">Life</a></li>
-      <li data-enter data-delay="240"><a href="#">Resources ▾</a></li>
+      <li data-enter data-delay="80"><a href="#" class="active" data-label="Enrollment">Enrollment</a></li>
+      <li data-enter data-delay="120"><a href="#" data-label="Health">Health</a></li>
+      <li data-enter data-delay="160"><a href="#" data-label="Money">Money</a></li>
+      <li data-enter data-delay="200"><a href="#" data-label="Life">Life</a></li>
+      <li data-enter data-delay="240"><a href="#" data-label="Resources ▾">Resources ▾</a></li>
     </ul>
     <a href="#" class="nav-enroll" data-enter data-delay="320">Enroll</a>
   </div>
