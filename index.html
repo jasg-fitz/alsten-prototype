@@ -226,7 +226,11 @@ body {
 
 .hero-left {
   background: var(--black);
-  padding: 96px var(--gutter);
+  /* Left padding lines the text up with the centered 1280 container (nav/footer),
+     while the photo on the right stays full-bleed to the screen edge.
+     100% here is the left column's width, so this avoids the scrollbar offset
+     that 100vw would introduce. */
+  padding: 96px var(--gutter) 96px max(var(--gutter), calc(100% - var(--max-w) / 2));
   display: flex;
   flex-direction: column;
   justify-content: center;
