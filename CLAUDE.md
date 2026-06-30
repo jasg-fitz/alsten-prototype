@@ -70,7 +70,7 @@ Four things only:
 These CSS variables live at the top of the `<style>` block. They control the entire visual system:
 
 ```css
---black          pure black — nav, hero left panel, contact band
+--black          near-black #030308 — nav, hero left panel, contact band, footer
 --navy           near-black used for most dark sections (benefits, need help content)
 --navy-mid       slightly lighter — quick links background
 --navy-card      dark card fill in the benefits grid
@@ -92,7 +92,13 @@ These CSS variables live at the top of the `<style>` block. They control the ent
 
 **Type system:** Barlow Condensed (headings + logo wordmark fallback), Barlow (everything else),
 Inter (hero date line only — Semi Bold 16px). The logo is a real SVG, not type.
-Body copy on the hero uses the warm grey `#B6B4B3`.
+The "Is Here!" word is true italic — the italic Barlow Condensed faces are loaded so it's a
+designed italic, not a faux browser slant. Hero body + date use the warm grey `#B6B4B3` at 150% line-height.
+
+**Chevron icons:** all "›" CTA arrows (action cards, benefit tiles, quick-links buttons) are the
+`chevron_right.svg` rendered via CSS `mask` on a `.icon-chevron` element, so each chevron inherits
+its text colour (and hover colour). Sized in `em`: action-card arrows are `1em`, benefit + quick-links
+arrows are `2em/3`. They nudge right on hover.
 
 ---
 
@@ -102,9 +108,9 @@ Body copy on the hero uses the warm grey `#B6B4B3`.
 |---------|-------|-------|
 | Nav | `.nav` | Sticky, black. SVG logo left; links right next to Enroll button. Burger menu < 768px |
 | Hero | `.hero` | Split: black left (text), photo right (`Header-image.jpg`). Signature clip-reveal title. Live pulsing dot on the tag |
-| Action cards | `.action-section` | 3 blue rounded cards (Learn / Explore / Get) that float up and overlap the hero bottom |
+| Action cards | `.action-section` | 3 blue rounded cards (Learn / Explore / Get), 32px gap, that float up and overlap the hero bottom |
 | Need help | `.need-help` | Full-bleed photo with diagonal dark gradient; content block right-aligned over it |
-| Benefits | `.benefits` | Dark navy, 3-column masonry grid of 6 benefit tiles |
+| Benefits | `.benefits` | Dark navy, 3-column masonry grid of 6 tiles. Each tile: 40px padding; description + right-aligned chevron CTA (no pill) |
 | App promo | `.app-promo` | Deep-blue (`--blue-deep`); phone mockup left (flush to bottom edge), content right |
 | Contact | `.contact-band` | Black, centered, two blue buttons |
 | Quick links | `.quick-links` | Dark, centered: Enroll Now + Check Premiums + Contacts |
@@ -169,7 +175,8 @@ The whole page is optimised for mobile, designed against `Home • Mobile.png` (
 - **Images/** — `Header-image.jpg` (hero), `App mockup.png` (app promo phone),
   `Benefits Image - Medical.jpg`, `Benefits Image - Dentist.jpg`, `Benefits Image - Tax Accounts.jpg`,
   `vitaly-gariev-8k5j5z6ZYT4-unsplash.jpg` (need help)
-- **Icons/** — `medication.svg` (prescription), `visibility.svg` (vision), `shield_person.svg` (life)
+- **Icons/** — `medication.svg` (prescription), `visibility.svg` (vision), `shield_person.svg` (life),
+  `chevron_right.svg` (all CTA arrows), `arrow_forward.svg` (available, currently unused)
 - These asset files ARE committed. Reference/working files (figma-*.png, wireframe, mobile mockup, phone-mockup.svg) are gitignored.
 
 ---
@@ -210,6 +217,8 @@ The whole page is optimised for mobile, designed against `Home • Mobile.png` (
 | Benefits mobile order via inline `--m-order` + `display:contents` on columns | Lets the 3-column desktop layout reflow into the correct single-column mobile order | Jun 2026 |
 | Nav gutter padding moved outside the max-width container | So nav content aligns with footer/benefits/contact instead of being inset by an extra gutter | Jun 2026 |
 | Hero text left padding = `max(--gutter, calc(100% - --max-w / 2))` | Lines the hero text up with the centered container while the photo stays full-bleed; the `100%` (column width) avoids the scrollbar offset that `100vw` causes | Jun 2026 |
+| CTA arrows are an SVG mask (`chevron_right.svg`), sized in `em` | Inherit text colour + hover state, scale with adjacent text; replaced the text "›" glyph and the bordered "Explore" pill on benefit tiles | Jun 2026 |
+| `--black` is `#030308`, not pure `#000000` | Slightly warmer near-black reads better against the hero photo and blue sections | Jun 2026 |
 | Subdomain `alsten-prototype.jasminefitzpatrick.com` (not a path) | Cloudflare Pages deploys at domain/subdomain level — a path would require Workers routing | Jun 2026 |
 | `.gitignore` excludes reference screenshots (figma-*, wireframe, mobile mockup, phone-mockup.svg) + `strata-capital.html` | Working references don't belong in the deployment repo; the `assets/` files ARE tracked | Jun 2026 |
 
