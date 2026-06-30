@@ -6,7 +6,7 @@
 <title>Alsten Capital Group — Open Enrollment 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════
    TOKENS
@@ -151,22 +151,25 @@ body {
   margin-left: auto;
 }
 .nav-links a {
-  font-size: 13px;
+  display: inline-grid;
+  align-items: center;
+  justify-items: center;
+  font-family: var(--ui);
+  font-size: 18px;
   font-weight: 500;
   color: var(--white);
   text-decoration: none;
   letter-spacing: 0.01em;
   padding: 7px 14px;
   border-radius: 6px;
-  transition: color 0.15s, font-weight 0.15s;
+  transition: color 0.15s;
   white-space: nowrap;
 }
-/* Reserve space for the bold state so hover doesn't shift layout */
+.nav-links a > span { grid-area: 1 / 1; }
+/* Hidden bold copy in the same cell reserves width so hover doesn't shift layout */
 .nav-links a::after {
   content: attr(data-label);
-  display: block;
-  height: 0;
-  overflow: hidden;
+  grid-area: 1 / 1;
   visibility: hidden;
   font-weight: 700;
 }
@@ -822,11 +825,11 @@ footer {
       <img src="assets/Logos/Alsten Capital Group Logo - Light.svg" alt="Alsten Capital Group">
     </a>
     <ul class="nav-links">
-      <li data-enter data-delay="80"><a href="#" data-label="Enrollment">Enrollment</a></li>
-      <li data-enter data-delay="120"><a href="#" data-label="Health">Health</a></li>
-      <li data-enter data-delay="160"><a href="#" data-label="Money">Money</a></li>
-      <li data-enter data-delay="200"><a href="#" data-label="Life">Life</a></li>
-      <li data-enter data-delay="240"><a href="#" data-label="Resources ▾">Resources ▾</a></li>
+      <li data-enter data-delay="80"><a href="#" data-label="Enrollment"><span>Enrollment</span></a></li>
+      <li data-enter data-delay="120"><a href="#" data-label="Health"><span>Health</span></a></li>
+      <li data-enter data-delay="160"><a href="#" data-label="Money"><span>Money</span></a></li>
+      <li data-enter data-delay="200"><a href="#" data-label="Life"><span>Life</span></a></li>
+      <li data-enter data-delay="240"><a href="#" data-label="Resources ▾"><span>Resources ▾</span></a></li>
     </ul>
     <a href="#" class="nav-enroll" data-enter data-delay="320">Enroll</a>
   </div>
