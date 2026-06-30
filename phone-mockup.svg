@@ -1,0 +1,121 @@
+<svg width="100%" viewBox="0 0 680 660" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Alsten Benefits — mobile app mockup</title>
+<desc>Phone mockup showing the My Benefits app with open enrollment countdown, Medical, Dental, Vision, and FSA/HSA coverage tiles, and a bottom navigation bar.</desc>
+<defs>
+  <clipPath id="sc">
+    <rect x="207" y="48" width="266" height="546" rx="28"/>
+  </clipPath>
+</defs>
+
+<!-- Phone body -->
+<rect x="200" y="20" width="280" height="600" rx="40" fill="#08101e"/>
+<!-- Screen -->
+<rect x="207" y="48" width="266" height="546" rx="28" fill="#0F1729"/>
+
+<g clip-path="url(#sc)">
+
+  <!-- Status bar -->
+  <text x="222" y="70" fill="white" font-family="system-ui,sans-serif" font-size="12" font-weight="600">9:41</text>
+  <rect x="438" y="57" width="20" height="10" rx="2.5" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+  <rect x="440" y="59" width="14" height="6" rx="1" fill="rgba(255,255,255,0.6)"/>
+  <rect x="458" y="59.5" width="2" height="5" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="414" y="64" width="3" height="3" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="419" y="61" width="3" height="6" rx="1" fill="rgba(255,255,255,0.6)"/>
+  <rect x="424" y="58" width="3" height="9" rx="1" fill="rgba(255,255,255,0.8)"/>
+
+  <!-- Dynamic island -->
+  <rect x="295" y="53" width="90" height="22" rx="11" fill="#08101e"/>
+
+  <!-- Header -->
+  <rect x="207" y="76" width="266" height="44" fill="#0c1420"/>
+  <rect x="222" y="88" width="4" height="14" rx="1.5" fill="#2563EB"/>
+  <rect x="228" y="84" width="4" height="18" rx="1.5" fill="#F97316"/>
+  <rect x="234" y="91" width="4" height="11" rx="1.5" fill="#2563EB"/>
+  <text x="244" y="100" fill="white" font-family="system-ui,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">ALSTEN</text>
+  <circle cx="456" cy="97" r="12" fill="#1a2d4a"/>
+  <text x="456" y="101" fill="rgba(255,255,255,0.65)" font-family="system-ui,sans-serif" font-size="10" font-weight="600" text-anchor="middle">JF</text>
+  <rect x="207" y="120" width="266" height="0.5" fill="rgba(255,255,255,0.07)"/>
+
+  <!-- Enrollment card -->
+  <rect x="217" y="128" width="246" height="78" rx="12" fill="#2563EB"/>
+  <text x="232" y="148" fill="rgba(255,255,255,0.6)" font-family="system-ui,sans-serif" font-size="10" letter-spacing="1">OPEN ENROLLMENT</text>
+  <text x="232" y="168" fill="white" font-family="system-ui,sans-serif" font-size="17" font-weight="700">Nov 7 – 21</text>
+  <text x="232" y="185" fill="rgba(255,255,255,0.65)" font-family="system-ui,sans-serif" font-size="11">12 days remaining</text>
+  <rect x="362" y="147" width="86" height="28" rx="8" fill="#F97316"/>
+  <text x="405" y="165" fill="white" font-family="system-ui,sans-serif" font-size="10" font-weight="700" text-anchor="middle">ENROLL NOW</text>
+
+  <!-- Section label -->
+  <text x="217" y="222" fill="rgba(255,255,255,0.32)" font-family="system-ui,sans-serif" font-size="11" letter-spacing="0.8">YOUR COVERAGE</text>
+
+  <!-- Medical -->
+  <rect x="217" y="232" width="115" height="96" rx="10" fill="#111c30"/>
+  <rect x="269" y="252" width="14" height="4" rx="2" fill="#2563EB"/>
+  <rect x="273" y="248" width="6" height="12" rx="2" fill="#2563EB"/>
+  <text x="228" y="300" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">MEDICAL</text>
+  <text x="228" y="316" fill="rgba(255,255,255,0.38)" font-family="system-ui,sans-serif" font-size="11">Blue Shield</text>
+
+  <!-- Dental -->
+  <rect x="340" y="232" width="115" height="96" rx="10" fill="#111c30"/>
+  <rect x="387" y="250" width="22" height="14" rx="6" fill="#2563EB"/>
+  <rect x="390" y="262" width="7" height="10" rx="2.5" fill="#2563EB"/>
+  <rect x="400" y="262" width="7" height="10" rx="2.5" fill="#2563EB"/>
+  <text x="352" y="300" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">DENTAL</text>
+  <text x="352" y="316" fill="rgba(255,255,255,0.38)" font-family="system-ui,sans-serif" font-size="11">Delta Dental</text>
+
+  <!-- Vision -->
+  <rect x="217" y="336" width="115" height="96" rx="10" fill="#111c30"/>
+  <path d="M253 356 Q275 345 297 356 Q275 367 253 356Z" fill="none" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="275" cy="356" r="5" fill="#2563EB"/>
+  <circle cx="275" cy="356" r="2" fill="#111c30"/>
+  <text x="228" y="404" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">VISION</text>
+  <text x="228" y="420" fill="rgba(255,255,255,0.38)" font-family="system-ui,sans-serif" font-size="11">VSP Basic</text>
+
+  <!-- FSA/HSA -->
+  <rect x="340" y="336" width="115" height="96" rx="10" fill="#F97316"/>
+  <text x="397" y="380" fill="rgba(255,255,255,0.9)" font-family="system-ui,sans-serif" font-size="28" font-weight="700" text-anchor="middle">$</text>
+  <text x="352" y="404" fill="white" font-family="system-ui,sans-serif" font-size="11" font-weight="700">FSA / HSA</text>
+  <text x="352" y="420" fill="rgba(255,255,255,0.7)" font-family="system-ui,sans-serif" font-size="11">$2,850 left</text>
+
+  <!-- Bottom nav -->
+  <rect x="207" y="502" width="266" height="64" fill="#09111f"/>
+  <rect x="207" y="502" width="266" height="0.5" fill="rgba(255,255,255,0.09)"/>
+
+  <!-- Home (active) -->
+  <path d="M234 521 L240 515 L246 521 L246 530 L234 530 Z" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="237" y="525" width="6" height="5" rx="1" fill="#2563EB"/>
+  <text x="240" y="544" fill="#2563EB" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle" font-weight="600">Home</text>
+
+  <!-- Benefits -->
+  <rect x="300" y="515" width="13" height="16" rx="2" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <path d="M303 520 L310 520 M303 523 L310 523 M303 526 L308 526" stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <text x="307" y="544" fill="rgba(255,255,255,0.22)" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Benefits</text>
+
+  <!-- Claims -->
+  <circle cx="374" cy="521" r="7" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <path d="M370 521 L374 517 L378 521" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="374" y="544" fill="rgba(255,255,255,0.22)" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Claims</text>
+
+  <!-- Profile -->
+  <circle cx="441" cy="519" r="6" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <path d="M434 530 Q441 526 448 530" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="441" y="544" fill="rgba(255,255,255,0.22)" font-family="system-ui,sans-serif" font-size="11" text-anchor="middle">Profile</text>
+
+  <!-- Home indicator -->
+  <rect x="305" y="558" width="70" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
+
+</g>
+
+<!-- Side buttons -->
+<rect x="195" y="148" width="5" height="36" rx="2.5" fill="#060d18"/>
+<rect x="195" y="194" width="5" height="36" rx="2.5" fill="#060d18"/>
+<rect x="480" y="168" width="5" height="56" rx="2.5" fill="#060d18"/>
+
+<!-- Speaker grill -->
+<circle cx="322" cy="617" r="2" fill="#141f30"/>
+<circle cx="330" cy="617" r="2" fill="#141f30"/>
+<circle cx="338" cy="617" r="2" fill="#141f30"/>
+<circle cx="346" cy="617" r="2" fill="#141f30"/>
+<circle cx="354" cy="617" r="2" fill="#141f30"/>
+<circle cx="362" cy="617" r="2" fill="#141f30"/>
+
+</svg>

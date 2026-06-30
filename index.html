@@ -189,6 +189,31 @@ body {
 }
 .nav-enroll:hover { background: #1D4ED8; }
 
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--white);
+  transition: transform 0.25s, opacity 0.2s;
+}
+.nav.open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+.nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 
 /* ══════════════════════════════════════════════════
    HERO — split layout: black left, photo right
@@ -769,7 +794,34 @@ footer {
 
 @media (max-width: 768px) {
   :root { --gutter: 24px; }
-  .nav-links { display: none; }
+
+  /* Nav: logo left, Enroll + burger right, links in a dropdown */
+  .nav-inner { gap: 12px; }
+  .logo { margin-right: auto; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--black);
+    padding: 12px var(--gutter) 20px;
+    border-bottom: 1px solid var(--rule-dark);
+    margin-left: 0;
+  }
+  .nav.open .nav-links { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+  }
+  .nav-links a > span,
+  .nav-links a::after { justify-self: start; }
+
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 64px var(--gutter); }
   .hero-title { font-size: 48px; }
@@ -780,19 +832,37 @@ footer {
   .need-help-overlay { background: rgba(3,3,8,0.65); }
   .need-help-content { width: 100%; }
   .need-help-title { font-size: 40px; }
-  .benefits-grid { grid-template-columns: 1fr; }
+
+  /* Benefits: single column in mobile order */
+  .benefits-grid { display: flex; flex-direction: column; gap: 16px; }
+  .benefit-col { display: contents; }
+  .benefit-tile { order: var(--m-order, 0); }
   .benefits-title { font-size: 44px; }
-  .app-inner { flex-direction: column; }
+
+  /* App: heading/body/button first, then title + phone at the bottom */
+  .app-inner { flex-direction: column-reverse; }
   .app-left { width: 100%; }
   .app-right { max-width: 100%; }
   .app-right-title { font-size: 40px; }
+
   .contact-title { font-size: 40px; }
   .quick-links-title { font-size: 36px; }
   .contact-actions { flex-direction: column; }
   .quick-links-btns { flex-direction: column; }
-  .footer-top { flex-direction: column; align-items: flex-start; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-nav { flex-wrap: wrap; }
+
+  /* Full-width buttons */
+  .btn-blue,
+  .btn-contact-blue,
+  .btn-ql-blue,
+  .btn-ql-dark {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-top { flex-direction: column; align-items: center; gap: 24px; }
+  .footer-nav { flex-wrap: wrap; justify-content: center; }
+  .footer-bottom { flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .footer-legal { flex-wrap: wrap; justify-content: center; }
 }
 
 
@@ -832,6 +902,9 @@ footer {
       <li data-enter data-delay="240"><a href="#" data-label="Resources ▾"><span>Resources ▾</span></a></li>
     </ul>
     <a href="#" class="nav-enroll" data-enter data-delay="320">Enroll</a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" data-enter data-delay="360">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -908,9 +981,9 @@ footer {
 
       <!-- Column 1: Medical + Vision -->
       <div class="benefit-col">
-        <a href="#" class="benefit-tile" data-reveal data-delay="0">
+        <a href="#" class="benefit-tile" style="--m-order:1" data-reveal data-delay="0">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="assets/Images/vitaly-gariev-8WYkI3cEZm8-unsplash.jpg" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/Benefits Image - Medical.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Medical Coverage</span>
@@ -918,7 +991,7 @@ footer {
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
-        <a href="#" class="benefit-tile" data-reveal data-delay="100">
+        <a href="#" class="benefit-tile" style="--m-order:4" data-reveal data-delay="100">
           <div class="benefit-icon-wrap">
             <img src="assets/Icons/visibility.svg" alt="">
           </div>
@@ -932,7 +1005,7 @@ footer {
 
       <!-- Column 2: Prescription + Tax-Advantaged -->
       <div class="benefit-col">
-        <a href="#" class="benefit-tile" data-reveal data-delay="0">
+        <a href="#" class="benefit-tile" style="--m-order:2" data-reveal data-delay="0">
           <div class="benefit-icon-wrap">
             <img src="assets/Icons/medication.svg" alt="">
           </div>
@@ -942,9 +1015,9 @@ footer {
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
-        <a href="#" class="benefit-tile" data-reveal data-delay="100">
+        <a href="#" class="benefit-tile" style="--m-order:5" data-reveal data-delay="100">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="assets/Images/joshua-hoehne-PBKdMYI6caI-unsplash.jpg" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/Benefits Image - Tax Accounts.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Tax-Advantaged Accounts</span>
@@ -956,9 +1029,9 @@ footer {
 
       <!-- Column 3: Dental + Life -->
       <div class="benefit-col">
-        <a href="#" class="benefit-tile" data-reveal data-delay="0">
+        <a href="#" class="benefit-tile" style="--m-order:3" data-reveal data-delay="0">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="assets/Images/lesly-juarez-1AhGNGKuhR0-unsplash.jpg" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/Benefits Image - Dentist.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Dental Care</span>
@@ -966,7 +1039,7 @@ footer {
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
-        <a href="#" class="benefit-tile" data-reveal data-delay="100">
+        <a href="#" class="benefit-tile" style="--m-order:6" data-reveal data-delay="100">
           <div class="benefit-icon-wrap">
             <img src="assets/Icons/shield_person.svg" alt="">
           </div>
@@ -1074,6 +1147,25 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── HERO RIGHT PHOTO FADE ── */
   const heroRight = document.getElementById('heroRight');
   if (heroRight) heroRight.classList.add('is-loaded');
+
+  /* ── MOBILE NAV TOGGLE ── */
+  const nav = document.querySelector('.nav');
+  const burger = document.querySelector('.nav-burger');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    // Close the menu when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  }
 
   /* ── SCROLL REVEAL ── */
   const revealEls = document.querySelectorAll('[data-reveal], [data-reveal-left], [data-reveal-right]');
