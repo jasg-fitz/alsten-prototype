@@ -510,13 +510,13 @@ body {
 ══════════════════════════════════════════════════ */
 .app-promo {
   background: var(--blue-deep);
-  padding: 80px var(--gutter);
+  padding: 80px var(--gutter) 0;
 }
 .app-inner {
   max-width: var(--max-w);
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 40px;
 }
@@ -528,6 +528,9 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+}
+.app-right {
+  align-self: center;
 }
 .app-left-title {
   font-family: var(--display);
