@@ -352,13 +352,24 @@ body {
   color: rgba(255,255,255,0.75);
   line-height: 1.5;
 }
+/* Chevron icon rendered from an SVG mask so it inherits the text colour */
+.icon-chevron {
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask: url('assets/Icons/chevron_right.svg') no-repeat center;
+  mask: url('assets/Icons/chevron_right.svg') no-repeat center;
+  -webkit-mask-size: 200%;
+  mask-size: 200%;
+  flex-shrink: 0;
+}
 .action-arrow {
-  font-size: 36px;
+  width: 36px;
+  height: 36px;
   color: #ffffff;
   flex-shrink: 0;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.action-card:hover .action-arrow { transform: translateX(4px); color: var(--white); }
+.action-card:hover .action-arrow { transform: translateX(4px); }
 
 
 /* ══════════════════════════════════════════════════
@@ -536,7 +547,8 @@ body {
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .benefit-cta-arrow {
-  font-size: 14px;
+  width: 15px;
+  height: 15px;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .benefit-tile:hover .benefit-cta {
@@ -712,6 +724,13 @@ body {
   transition: background 0.15s;
 }
 .btn-ql-dark:hover { background: rgba(255,255,255,0.15); }
+.ql-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-ql-blue:hover .ql-arrow,
+.btn-ql-dark:hover .ql-arrow { transform: translateX(4px); }
 
 
 /* ══════════════════════════════════════════════════
@@ -940,21 +959,21 @@ footer {
       <span class="action-label">Learn</span>
       <div class="action-row">
         <span class="action-desc">What's new for 2026</span>
-        <span class="action-arrow">›</span>
+        <i class="action-arrow icon-chevron" aria-hidden="true"></i>
       </div>
     </a>
     <a href="#" class="action-card" data-reveal data-delay="100">
       <span class="action-label">Explore</span>
       <div class="action-row">
         <span class="action-desc">More about your benefits</span>
-        <span class="action-arrow">›</span>
+        <i class="action-arrow icon-chevron" aria-hidden="true"></i>
       </div>
     </a>
     <a href="#" class="action-card" data-reveal data-delay="200">
       <span class="action-label">Get</span>
       <div class="action-row">
         <span class="action-desc">Your enrollment to-dos</span>
-        <span class="action-arrow">›</span>
+        <i class="action-arrow icon-chevron" aria-hidden="true"></i>
       </div>
     </a>
   </div>
@@ -993,7 +1012,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Medical Coverage</span>
             <span class="benefit-desc">Core protection for what matters most.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:4" data-reveal data-delay="100">
@@ -1003,7 +1022,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Vision Benefits</span>
             <span class="benefit-desc">See clearly. See well.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
       </div>
@@ -1017,7 +1036,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Prescription Coverage</span>
             <span class="benefit-desc">Medications when you need them.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:5" data-reveal data-delay="100">
@@ -1027,7 +1046,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Tax-Advantaged Accounts</span>
             <span class="benefit-desc">Save smarter. Keep more.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
       </div>
@@ -1041,7 +1060,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Dental Care</span>
             <span class="benefit-desc">Keep your smile in good shape.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:6" data-reveal data-delay="100">
@@ -1051,7 +1070,7 @@ footer {
           <div class="benefit-body">
             <span class="benefit-name">Life &amp; AD&amp;D</span>
             <span class="benefit-desc">Protection for the people who depend on you.</span>
-            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
           </div>
         </a>
       </div>
@@ -1099,9 +1118,9 @@ footer {
   <div data-reveal>
     <h2 class="quick-links-title">Quick Links</h2>
     <div class="quick-links-btns">
-      <a href="#" class="btn-ql-blue">Enroll Now ›</a>
-      <a href="#" class="btn-ql-dark">Check Premiums ›</a>
-      <a href="#" class="btn-ql-dark">Contacts ›</a>
+      <a href="#" class="btn-ql-blue">Enroll Now <i class="ql-arrow icon-chevron" aria-hidden="true"></i></a>
+      <a href="#" class="btn-ql-dark">Check Premiums <i class="ql-arrow icon-chevron" aria-hidden="true"></i></a>
+      <a href="#" class="btn-ql-dark">Contacts <i class="ql-arrow icon-chevron" aria-hidden="true"></i></a>
     </div>
   </div>
 </div>
