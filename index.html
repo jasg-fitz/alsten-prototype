@@ -514,11 +514,12 @@ body {
 }
 
 .benefit-body {
-  padding: 24px 32px 28px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   flex: 1;
+  justify-content: flex-end;
 }
 .benefit-name {
   font-family: var(--display);
@@ -528,34 +529,25 @@ body {
   color: var(--white);
   line-height: 1.1;
 }
+/* Description sits on a row with the chevron pushed to the right edge */
+.benefit-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 .benefit-desc {
   font-size: 14px;
   color: rgba(255,255,255,0.5);
   line-height: 1.65;
-  flex: 1;
-}
-.benefit-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 6px;
-  padding: 6px 14px;
-  align-self: flex-start;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .benefit-cta-arrow {
+  width: calc(2em / 3);
+  height: calc(2em / 3);
+  color: rgba(255,255,255,0.85);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.benefit-tile:hover .benefit-cta {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.45);
-  background: rgba(255,255,255,0.06);
-}
-.benefit-tile:hover .benefit-cta-arrow { transform: translateX(3px); }
+.benefit-tile:hover .benefit-cta-arrow { transform: translateX(3px); color: var(--white); }
 
 
 /* ══════════════════════════════════════════════════
@@ -724,6 +716,8 @@ body {
 }
 .btn-ql-dark:hover { background: rgba(255,255,255,0.15); }
 .ql-arrow {
+  width: calc(2em / 3);
+  height: calc(2em / 3);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-ql-blue:hover .ql-arrow,
@@ -1008,8 +1002,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Medical Coverage</span>
-            <span class="benefit-desc">Core protection for what matters most.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">Core protection for what matters most.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:4" data-reveal data-delay="100">
@@ -1018,8 +1014,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Vision Benefits</span>
-            <span class="benefit-desc">See clearly. See well.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">See clearly. See well.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
       </div>
@@ -1032,8 +1030,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Prescription Coverage</span>
-            <span class="benefit-desc">Medications when you need them.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">Medications when you need them.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:5" data-reveal data-delay="100">
@@ -1042,8 +1042,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Tax-Advantaged Accounts</span>
-            <span class="benefit-desc">Save smarter. Keep more.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">Save smarter. Keep more.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
       </div>
@@ -1056,8 +1058,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Dental Care</span>
-            <span class="benefit-desc">Keep your smile in good shape.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">Keep your smile in good shape.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
         <a href="#" class="benefit-tile" style="--m-order:6" data-reveal data-delay="100">
@@ -1066,8 +1070,10 @@ footer {
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Life &amp; AD&amp;D</span>
-            <span class="benefit-desc">Protection for the people who depend on you.</span>
-            <span class="benefit-cta">Explore <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i></span>
+            <div class="benefit-cta-row">
+              <span class="benefit-desc">Protection for the people who depend on you.</span>
+              <i class="benefit-cta-arrow icon-chevron" aria-hidden="true"></i>
+            </div>
           </div>
         </a>
       </div>
