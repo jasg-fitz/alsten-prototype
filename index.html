@@ -352,9 +352,12 @@ body {
   color: rgba(255,255,255,0.75);
   line-height: 1.5;
 }
-/* Chevron icon rendered from an SVG mask so it inherits the text colour */
+/* Chevron icon rendered from an SVG mask so it inherits the text colour.
+   Sized in em so it matches the font-size of the text it sits beside. */
 .icon-chevron {
   display: inline-block;
+  width: 1em;
+  height: 1em;
   background-color: currentColor;
   -webkit-mask: url('assets/Icons/chevron_right.svg') no-repeat center;
   mask: url('assets/Icons/chevron_right.svg') no-repeat center;
@@ -363,8 +366,6 @@ body {
   flex-shrink: 0;
 }
 .action-arrow {
-  width: 36px;
-  height: 36px;
   color: #ffffff;
   flex-shrink: 0;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -547,8 +548,6 @@ body {
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 .benefit-cta-arrow {
-  width: 15px;
-  height: 15px;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .benefit-tile:hover .benefit-cta {
@@ -725,8 +724,6 @@ body {
 }
 .btn-ql-dark:hover { background: rgba(255,255,255,0.15); }
 .ql-arrow {
-  width: 18px;
-  height: 18px;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-ql-blue:hover .ql-arrow,
