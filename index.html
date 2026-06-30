@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alsten Capital Group — Open Enrollment 2025</title>
+<title>Alsten Capital Group — Open Enrollment 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════
    TOKENS
@@ -21,16 +21,15 @@
   --blue:          #2563EB;
   --blue-card:     #3060E8;
   --blue-section:  #1A3CBD;
+  --blue-deep:     #0D1B5E;
   --orange:        #F97316;
   --white:         #FFFFFF;
   --gray-text:     rgba(255,255,255,0.55);
-  --gray-section:  #B2B1AD;
-  --gray-light:    #F0EFED;
   --rule-dark:     rgba(255,255,255,0.08);
   --rule-light:    rgba(0,0,0,0.1);
 
-  --display: 'Bebas Neue', 'Arial Black', sans-serif;
-  --ui:      'Lato', system-ui, sans-serif;
+  --display: 'Barlow Condensed', sans-serif;
+  --ui:      'Barlow', sans-serif;
   --max-w:   1280px;
   --gutter:  80px;
   --radius:  12px;
@@ -116,7 +115,7 @@ body {
    NAV
 ══════════════════════════════════════════════════ */
 .nav {
-  background: var(--navy);
+  background: var(--black);
   position: sticky;
   top: 0;
   z-index: 200;
@@ -135,41 +134,13 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-mark {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-}
-.logo-mark-bar {
+.logo img {
+  height: 40px;
+  width: auto;
   display: block;
-  border-radius: 2px;
-}
-.logo-mark-bar:nth-child(1) { width: 5px; height: 18px; background: var(--blue); }
-.logo-mark-bar:nth-child(2) { width: 5px; height: 28px; background: var(--orange); }
-.logo-mark-bar:nth-child(3) { width: 5px; height: 13px; background: var(--blue); }
-.logo-wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-.logo-name {
-  font-family: var(--display);
-  font-size: 22px;
-  color: var(--white);
-  letter-spacing: 0.12em;
-  line-height: 1;
-}
-.logo-sub {
-  font-size: 8px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  line-height: 1;
 }
 
 .nav-links {
@@ -191,6 +162,7 @@ body {
   white-space: nowrap;
 }
 .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+.nav-links a.active { color: var(--white); font-weight: 700; }
 
 .nav-enroll {
   font-size: 13px;
@@ -224,19 +196,31 @@ body {
   justify-content: center;
 }
 
+.hero-tag {
+  display: inline-block;
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
 .hero-date {
   display: block;
+  font-family: 'Barlow', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  text-transform: uppercase;
   color: var(--white);
   margin-bottom: 20px;
-  letter-spacing: 0.01em;
 }
 
 .hero-title {
   font-family: var(--display);
   font-size: 84px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -252,7 +236,7 @@ body {
 }
 
 .hero-right {
-  background: url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1000&q=85') center/cover no-repeat;
+  background: url('assets/Images/Tablet on desk 2.png') center/cover no-repeat;
   opacity: 0;
   transition: opacity 1.1s ease 0.2s;
 }
@@ -265,6 +249,9 @@ body {
 .action-section {
   background: var(--blue-section);
   padding: 32px var(--gutter) 40px;
+  position: relative;
+  z-index: 10;
+  margin-top: -56px;
 }
 .action-grid {
   max-width: var(--max-w);
@@ -291,9 +278,9 @@ body {
 .action-label {
   font-family: var(--display);
   font-size: 28px;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
-  letter-spacing: 0.04em;
   line-height: 1;
 }
 .action-row {
@@ -321,7 +308,6 @@ body {
    NEED HELP DECIDING
 ══════════════════════════════════════════════════ */
 .need-help {
-  background: var(--gray-section);
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 524px;
@@ -330,10 +316,11 @@ body {
 .need-help-image {
   position: relative;
   overflow: hidden;
-  background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80') center/cover no-repeat;
+  background: url('assets/Images/vitaly-gariev-8k5j5z6ZYT4-unsplash.jpg') center/cover no-repeat;
 }
 
 .need-help-content {
+  background: var(--navy);
   padding: 80px 72px;
   display: flex;
   flex-direction: column;
@@ -343,7 +330,7 @@ body {
 .need-help-title {
   font-family: var(--display);
   font-size: 56px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -351,15 +338,15 @@ body {
 .need-help-body {
   font-size: 15px;
   font-weight: 400;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.65);
   line-height: 1.7;
   max-width: 400px;
 }
-.btn-navy {
+.btn-blue {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--navy);
+  background: var(--blue);
   color: var(--white);
   font-size: 14px;
   font-weight: 600;
@@ -370,7 +357,7 @@ body {
   align-self: flex-start;
   transition: background 0.15s;
 }
-.btn-navy:hover { background: var(--blue); }
+.btn-blue:hover { background: #1D4ED8; }
 
 
 /* ══════════════════════════════════════════════════
@@ -388,17 +375,10 @@ body {
   text-align: center;
   margin-bottom: 56px;
 }
-.benefits-tag {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 12px;
-  letter-spacing: 0.01em;
-}
 .benefits-title {
   font-family: var(--display);
   font-size: 64px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -451,7 +431,10 @@ body {
 .benefit-icon-wrap {
   padding: 32px 32px 0;
 }
-.benefit-icon-wrap svg {
+.benefit-icon-wrap img {
+  width: 48px;
+  height: 48px;
+  display: block;
   opacity: 0.9;
 }
 
@@ -465,7 +448,7 @@ body {
 .benefit-name {
   font-family: var(--display);
   font-size: 22px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.1;
@@ -502,42 +485,38 @@ body {
 
 
 /* ══════════════════════════════════════════════════
-   APP PROMO — split: gray left / light right
+   APP PROMO — dark blue, left: title + mockup, right: content
 ══════════════════════════════════════════════════ */
 .app-promo {
+  background: var(--blue-deep);
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 640px;
 }
 
 .app-left {
-  background: var(--gray-section);
   padding: 72px var(--gutter);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 40px;
 }
 .app-left-title {
   font-family: var(--display);
   font-size: 64px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
 }
-.app-image {
-  width: 180px;
-  height: 140px;
-  background: rgba(0,0,0,0.15);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.app-mockup-img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
 }
 
 .app-right {
-  background: var(--gray-light);
   padding: 72px 72px;
   display: flex;
   flex-direction: column;
@@ -547,38 +526,23 @@ body {
 .app-right-title {
   font-family: var(--display);
   font-size: 48px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1.05;
 }
 .app-right-body {
   font-size: 15px;
-  color: #555;
+  color: rgba(255,255,255,0.65);
   line-height: 1.65;
 }
-.btn-navy-dark {
-  display: inline-flex;
-  align-items: center;
-  background: var(--navy);
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  align-self: flex-start;
-  transition: background 0.15s;
-}
-.btn-navy-dark:hover { background: var(--blue); }
 
 
 /* ══════════════════════════════════════════════════
    CONTACT THE BENEFITS CENTRE
 ══════════════════════════════════════════════════ */
 .contact-band {
-  background: var(--navy);
+  background: var(--black);
   padding: 96px var(--gutter);
   text-align: center;
 }
@@ -589,16 +553,10 @@ body {
 .contact-title {
   font-family: var(--display);
   font-size: 56px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
-  margin-bottom: 16px;
-}
-.contact-sub {
-  font-size: 15px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.65;
   margin-bottom: 40px;
 }
 .contact-actions {
@@ -607,43 +565,27 @@ body {
   justify-content: center;
   gap: 12px;
 }
-.btn-contact-outline {
+.btn-contact-blue {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  border: 1.5px solid rgba(255,255,255,0.35);
-  background: transparent;
+  background: var(--blue);
   color: var(--white);
   font-size: 14px;
   font-weight: 600;
   padding: 13px 26px;
   border-radius: 8px;
   text-decoration: none;
-  transition: border-color 0.15s, background 0.15s;
-}
-.btn-contact-outline:hover { border-color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.07); }
-.btn-contact-filled {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: rgba(255,255,255,0.12);
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 13px 26px;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 1.5px solid transparent;
   transition: background 0.15s;
 }
-.btn-contact-filled:hover { background: rgba(255,255,255,0.2); }
+.btn-contact-blue:hover { background: #1D4ED8; }
 
 
 /* ══════════════════════════════════════════════════
    QUICK LINKS
 ══════════════════════════════════════════════════ */
 .quick-links {
-  background: var(--navy);
+  background: var(--navy-mid);
   padding: 80px var(--gutter);
   border-top: 1px solid var(--rule-dark);
   text-align: center;
@@ -651,7 +593,7 @@ body {
 .quick-links-title {
   font-family: var(--display);
   font-size: 48px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--white);
   line-height: 1.0;
@@ -663,23 +605,11 @@ body {
   justify-content: center;
   gap: 12px;
 }
-.btn-ql-white {
+.btn-ql-blue {
   display: inline-flex;
   align-items: center;
-  background: var(--white);
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 13px 26px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-}
-.btn-ql-white:hover { background: var(--gray-light); }
-.btn-ql-dark {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255,255,255,0.12);
+  gap: 8px;
+  background: var(--blue);
   color: var(--white);
   font-size: 14px;
   font-weight: 600;
@@ -688,14 +618,28 @@ body {
   text-decoration: none;
   transition: background 0.15s;
 }
-.btn-ql-dark:hover { background: rgba(255,255,255,0.2); }
+.btn-ql-blue:hover { background: #1D4ED8; }
+.btn-ql-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-ql-dark:hover { background: rgba(255,255,255,0.15); }
 
 
 /* ══════════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════════ */
 footer {
-  background: var(--navy);
+  background: var(--black);
   padding: 56px var(--gutter) 40px;
   border-top: 1px solid var(--rule-dark);
 }
@@ -705,48 +649,22 @@ footer {
 }
 .footer-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 28px;
   padding-bottom: 36px;
 }
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 }
-.footer-logo-mark {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-}
-.footer-logo-bar {
+.footer-logo img {
+  height: 36px;
+  width: auto;
   display: block;
-  border-radius: 2px;
-}
-.footer-logo-bar:nth-child(1) { width: 4px; height: 16px; background: var(--blue); }
-.footer-logo-bar:nth-child(2) { width: 4px; height: 24px; background: var(--orange); }
-.footer-logo-bar:nth-child(3) { width: 4px; height: 11px; background: var(--blue); }
-.footer-logo-wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-.footer-logo-name {
-  font-family: var(--display);
-  font-size: 20px;
-  color: var(--white);
-  letter-spacing: 0.12em;
-  line-height: 1;
-}
-.footer-logo-sub {
-  font-size: 7px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  line-height: 1;
 }
 .footer-nav {
   display: flex;
@@ -806,6 +724,7 @@ footer {
   .hero-left { padding: 64px var(--gutter); }
   .hero-title { font-size: 48px; }
   .hero-right { height: 320px; }
+  .action-section { margin-top: 0; }
   .action-grid { grid-template-columns: 1fr; }
   .need-help { grid-template-columns: 1fr; }
   .need-help-image { height: 280px; }
@@ -820,8 +739,10 @@ footer {
   .contact-title { font-size: 40px; }
   .quick-links-title { font-size: 36px; }
   .contact-actions { flex-direction: column; }
+  .quick-links-btns { flex-direction: column; }
+  .footer-top { flex-direction: column; align-items: flex-start; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-nav { flex-wrap: wrap; justify-content: center; }
+  .footer-nav { flex-wrap: wrap; }
 }
 
 
@@ -851,21 +772,13 @@ footer {
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo" data-enter data-delay="0">
-      <div class="logo-mark">
-        <span class="logo-mark-bar"></span>
-        <span class="logo-mark-bar"></span>
-        <span class="logo-mark-bar"></span>
-      </div>
-      <div class="logo-wordmark">
-        <span class="logo-name">ALSTEN</span>
-        <span class="logo-sub">Capital Group</span>
-      </div>
+      <img src="assets/Logos/Alsten Capital Group Logo - Light.svg" alt="Alsten Capital Group">
     </a>
     <ul class="nav-links">
-      <li data-enter data-delay="80"><a href="#">Enrollment</a></li>
+      <li data-enter data-delay="80"><a href="#" class="active">Enrollment</a></li>
       <li data-enter data-delay="120"><a href="#">Health</a></li>
       <li data-enter data-delay="160"><a href="#">Money</a></li>
-      <li data-enter data-delay="200"><a href="#">Life ▾</a></li>
+      <li data-enter data-delay="200"><a href="#">Life</a></li>
       <li data-enter data-delay="240"><a href="#">Resources ▾</a></li>
     </ul>
     <a href="#" class="nav-enroll" data-enter data-delay="320">Enroll</a>
@@ -876,7 +789,8 @@ footer {
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-left">
-    <span class="hero-date" data-enter data-delay="200">November 7 – 21</span>
+    <span class="hero-tag" data-enter data-delay="180">Open Enrollment 2026</span>
+    <span class="hero-date" data-enter data-delay="220">November 7 – 21</span>
 
     <!-- Signature: clip-reveal upward -->
     <h1 class="hero-title" aria-label="Open Enrollment Is Here">
@@ -925,7 +839,7 @@ footer {
   <div class="need-help-content" data-reveal-right>
     <h2 class="need-help-title">Need Help<br>Deciding?</h2>
     <p class="need-help-body">Take a few minutes and review how people just like you think about and choose their Medical Plans. Then, compare their situations to your own!</p>
-    <a href="#" class="btn-navy">Compare Plans</a>
+    <a href="#" class="btn-blue">Compare Plans</a>
   </div>
 </section>
 
@@ -934,9 +848,8 @@ footer {
 <section class="benefits">
   <div class="benefits-inner">
     <div class="benefits-header" data-reveal>
-      <p class="benefits-tag">Benefits</p>
       <h2 class="benefits-title">Explore Your Benefits</h2>
-      <p class="benefits-sub">Six categories. All yours to review.</p>
+      <p class="benefits-sub">Choose what you need this enrollment.</p>
     </div>
 
     <div class="benefits-grid">
@@ -945,21 +858,17 @@ footer {
       <div class="benefit-col">
         <a href="#" class="benefit-tile" data-reveal data-delay="0">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/vitaly-gariev-8WYkI3cEZm8-unsplash.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Medical Coverage</span>
-            <span class="benefit-desc">Core protection for what matters</span>
+            <span class="benefit-desc">Core protection for what matters most.</span>
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" data-reveal data-delay="100">
           <div class="benefit-icon-wrap">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <ellipse cx="18" cy="18" rx="14" ry="9" stroke="rgba(255,255,255,0.75)" stroke-width="1.8"/>
-              <circle cx="18" cy="18" r="5" stroke="rgba(255,255,255,0.75)" stroke-width="1.6"/>
-              <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.75)"/>
-            </svg>
+            <img src="assets/Icons/visibility.svg" alt="">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Vision Benefits</span>
@@ -973,25 +882,21 @@ footer {
       <div class="benefit-col">
         <a href="#" class="benefit-tile" data-reveal data-delay="0">
           <div class="benefit-icon-wrap">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="9" y="12" width="18" height="17" rx="2" stroke="rgba(255,255,255,0.75)" stroke-width="1.8"/>
-              <path d="M14 12v-1.5a4 4 0 018 0V12" stroke="rgba(255,255,255,0.75)" stroke-width="1.6"/>
-              <path d="M12.5 22h11" stroke="rgba(255,255,255,0.75)" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
+            <img src="assets/Icons/medication.svg" alt="">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Prescription Coverage</span>
-            <span class="benefit-desc">Medications when you need them</span>
+            <span class="benefit-desc">Medications when you need them.</span>
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" data-reveal data-delay="100">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=75" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/joshua-hoehne-PBKdMYI6caI-unsplash.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Tax-Advantaged Accounts</span>
-            <span class="benefit-desc">Save smarter. Keep more. That's the idea.</span>
+            <span class="benefit-desc">Save smarter. Keep more.</span>
             <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
@@ -1001,20 +906,17 @@ footer {
       <div class="benefit-col">
         <a href="#" class="benefit-tile" data-reveal data-delay="0">
           <div class="benefit-photo-wrap">
-            <img class="benefit-photo" src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=75" alt="" loading="lazy">
+            <img class="benefit-photo" src="assets/Images/lesly-juarez-1AhGNGKuhR0-unsplash.jpg" alt="" loading="lazy">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Dental Care</span>
-            <span class="benefit-desc">Keep your teeth in good shape</span>
-            <span class="benefit-cta">Learn <span class="benefit-cta-arrow">›</span></span>
+            <span class="benefit-desc">Keep your smile in good shape.</span>
+            <span class="benefit-cta">Explore <span class="benefit-cta-arrow">›</span></span>
           </div>
         </a>
         <a href="#" class="benefit-tile" data-reveal data-delay="100">
           <div class="benefit-icon-wrap">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <path d="M18 6C12 10.5 7 15.5 7 21a11 11 0 0022 0c0-5.5-5-10.5-11-15z" stroke="rgba(255,255,255,0.75)" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M13 22l4 4 6-7" stroke="rgba(255,255,255,0.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <img src="assets/Icons/shield_person.svg" alt="">
           </div>
           <div class="benefit-body">
             <span class="benefit-name">Life &amp; AD&amp;D</span>
@@ -1033,18 +935,12 @@ footer {
 <section class="app-promo">
   <div class="app-left" data-reveal-left>
     <h2 class="app-left-title">Tap<br>That<br>App!</h2>
-    <div class="app-image">
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-        <rect x="4" y="4" width="48" height="48" rx="6" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-        <circle cx="28" cy="22" r="6" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-        <path d="M14 42c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-    </div>
+    <img class="app-mockup-img" src="assets/Images/App mockup.png" alt="Alsten Benefits mobile app" loading="lazy">
   </div>
   <div class="app-right" data-reveal-right>
     <h2 class="app-right-title">Looking for your<br>benefits on the go?</h2>
-    <p class="app-right-body">Check out our app library.</p>
-    <a href="#" class="btn-navy-dark">Explore apps</a>
+    <p class="app-right-body">Everything you need is in your pocket. Check your coverage, update your selections, and see what's coming up during open enrollment. Check out our app library.</p>
+    <a href="#" class="btn-blue">Get The App</a>
   </div>
 </section>
 
@@ -1053,13 +949,12 @@ footer {
 <section class="contact-band">
   <div class="contact-inner" data-reveal>
     <h2 class="contact-title">Contact the<br>Benefits Centre</h2>
-    <p class="contact-sub">Reach out. We'll answer. No hold music. No runaround.</p>
     <div class="contact-actions">
-      <a href="tel:18009533551" class="btn-contact-outline">
+      <a href="tel:18009533551" class="btn-contact-blue">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 3A1.1 1.1 0 012.6 2h.6L4.7 4.8l-.8.8C5 7 7 9 8.4 10.2l.8-.8L12 10.8v.6A1.1 1.1 0 0110.9 12.5C5.8 12.5 1.5 8.2 1.5 3.1V3z" fill="currentColor"/></svg>
         Call 1-800-953-3551
       </a>
-      <a href="mailto:benefits@alstencapital.com" class="btn-contact-filled">Email Us</a>
+      <a href="mailto:benefits@alstencapital.com" class="btn-contact-blue">Email Us</a>
     </div>
   </div>
 </section>
@@ -1070,8 +965,9 @@ footer {
   <div data-reveal>
     <h2 class="quick-links-title">Quick Links</h2>
     <div class="quick-links-btns">
-      <a href="#" class="btn-ql-white">Enroll Now</a>
-      <a href="#" class="btn-ql-dark">Check Premiums</a>
+      <a href="#" class="btn-ql-blue">Enroll Now ›</a>
+      <a href="#" class="btn-ql-dark">Check Premiums ›</a>
+      <a href="#" class="btn-ql-dark">Contacts ›</a>
     </div>
   </div>
 </div>
@@ -1082,15 +978,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-top">
       <a href="#" class="footer-logo">
-        <div class="footer-logo-mark">
-          <span class="footer-logo-bar"></span>
-          <span class="footer-logo-bar"></span>
-          <span class="footer-logo-bar"></span>
-        </div>
-        <div class="footer-logo-wordmark">
-          <span class="footer-logo-name">ALSTEN</span>
-          <span class="footer-logo-sub">Capital Group</span>
-        </div>
+        <img src="assets/Logos/Alsten Capital Group Logo - Light.svg" alt="Alsten Capital Group">
       </a>
       <ul class="footer-nav">
         <li><a href="#">Enrollment</a></li>
