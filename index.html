@@ -35,12 +35,16 @@
   --radius:  12px;
 }
 
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: var(--ui);
-  background: var(--white);
+  background: var(--black);
   color: var(--navy);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* ══════════════════════════════════════════════════
@@ -808,6 +812,12 @@ footer {
 
 @media (max-width: 768px) {
   :root { --gutter: 24px; }
+
+  /* Slide reveals vertically on mobile so the off-screen horizontal
+     transform can't push the document wider than the viewport
+     (which makes iOS Safari shrink-to-fit and expose a blank strip). */
+  [data-reveal-left],
+  [data-reveal-right] { transform: translateY(32px); }
 
   /* Nav: logo left, Enroll + burger right, links in a dropdown */
   .nav-inner { gap: 12px; }
