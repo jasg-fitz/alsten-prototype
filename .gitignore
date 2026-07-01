@@ -8,3 +8,10 @@ strata-capital.html
 /Email brief.png
 /Home • Mobile.png
 /phone-mockup.svg
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
